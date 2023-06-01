@@ -83,11 +83,13 @@ import './index.css';
           </div>
         <br/>
         <div>
-        <button 
-        className="again" 
-        onClick={() => this.resetGame()}>
-          rejouer
-        </button>
+        {winner && (
+          <button 
+          className="again" 
+          onClick={() => this.resetGame()}>
+            rejouer
+          </button>
+        )}
         </div>
 
 
@@ -115,6 +117,8 @@ import './index.css';
       );
     }
   }
+
+  // ========================================
   function calculateWinner(squares) {
     const lines = [
       [0, 1, 2],
